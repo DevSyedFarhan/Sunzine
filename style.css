@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Aldrich", serif;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+#page1{
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2.3vw 6.1vw;
+    background-color: white;
+    z-index: 999;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+}
+
+#nav-part2{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nav-part2 #links{
+    width: 80%;
+    display: flex;
+}
+
+
+#links {
+    display: flex;
+    gap: 3.2vw;
+}
+
+#links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1vw;
+    font-weight: 500;
+    opacity: .6;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+#links a::before {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 6px;
+    z-index: -99;
+    background: #0ECE91;
+    transition: width 0.3s ease;
+    bottom: 10%;
+    left: -12%;
+    position: absolute;
+}
+#links a:hover{
+    opacity: 1;
+}
+#links a:hover::before {
+    width: 120%;
+    opacity: 1;
+}
+
+#links .home.active::before {
+    width: 100%;
+    opacity: 1;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 1vw;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#page1-center{
+    width: 100%;
+    position: absolute;
+    height: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8vw 10vw;
+    gap: 5vw;
+    justify-content: space-between;
+}
+#page1-center>h1{
+    text-transform: uppercase;
+    font-size: 3vw;
+    font-weight: 400;
+    text-align: center;
+}
+#page1-center #list>ul{
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+ul>li{
+    opacity: .6;
+    position: relative;
+    cursor: pointer;
+}
+
+ul>li:nth-child(1){
+    list-style-type: none;
+}
+
+ul>li::before {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 6px;
+    z-index: -99;
+    background: #0ECE91;
+    transition: width 0.3s ease;
+    bottom: 10%;
+    left: -12%;
+    position: absolute;
+}
+
+ul>li:hover{
+    opacity: 1;
+}
+ul>li:hover::before {
+    width: 120%;
+    opacity: 1;
+}
+#page2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    padding: 2vw;
+}
+#image-container{
+    align-items: center;
+    width: 100%;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 250px;
+    height: 300px;
+    width: 250px;
+    background-color: red;
+    position: relative;
+    justify-content: end;
+    color: white;
+}
+
+.col img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+}
+.text{
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.5s ease;
+}
+.text p{
+    padding-left: 1vw;
+    font-size: .8vw;
+    color: white;
+}
+.text h4{
+    padding : 1vw;
+    font-size: 2vw;
+}
+
+.col:hover .text{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.row{
+    flex-wrap: wrap; 
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    gap: 1vw;
+}
+
+#page2>i{
+    font-size: 4vw;
+    animation: rotate;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+#bottom{
+    height: 30vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+#btm-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 5vw 3vw;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(365deg);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #nav-part2 a{
+        display: none;
+    }
+    #page1-center>h1{
+        font-size: 3vw;
+    }
+    #page1-center #list>ul>li{
+        font-size: 2vw;
+    }
+    
+}
+
+@media screen and (max-width: 950px){
+    #btm-nav{
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        gap: 4vw;
+    }
+    
+}
