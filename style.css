@@ -235,6 +235,13 @@ ul>li:hover::before {
     justify-content: space-between;
     padding: 5vw 3vw;
 }
+#icon {
+    display: flex;
+    gap: 1vw;
+}
+#icon i {
+    font-size: 2vw;
+}
 
 @keyframes rotate {
     0%{
