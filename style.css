@@ -164,7 +164,7 @@ ul>li:hover::before {
 .col{
     display: flex;
     flex-direction: column;
-    flex: 1 1 250px;
+    flex: 2 1 200px;
     height: 300px;
     width: 250px;
     background-color: red;
@@ -206,6 +206,12 @@ ul>li:hover::before {
     min-height: 300px;
     display: flex;
     gap: 1vw;
+}
+.row .wide{
+    flex-grow: 4;
+}
+.row .short{
+    flex-grow: 1;
 }
 
 #page2>i{
